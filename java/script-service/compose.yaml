@@ -1,0 +1,10 @@
+#services:
+#  h2:
+#    image: 'oscarfonts/h2:latest'
+#    environment:
+#      - 'H2_OPTIONS=-ifNotExists'
+#    ports:
+#      - '1521:1521'  # H2 TCP server port
+#      - '8082:81'    # H2 web console port
+#    volumes:
+#      - './data:/opt/h2-data'  # Persist data to a local directory

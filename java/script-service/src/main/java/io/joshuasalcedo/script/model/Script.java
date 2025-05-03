@@ -1,32 +1,31 @@
 package io.joshuasalcedo.script.model;
 
-import io.joshuasalcedo.commonlibs.domain.base.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.proxy.HibernateProxy;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 
 /**
  * Entity class for storing scripts in the ScriptManager system.
  * This entity represents executable scripts with metadata.
  */
 @Entity
-@Table(name = "scripts", indexes = {
-        @Index(name = "idx_script_title", columnList = "title"),
-        @Index(name = "idx_script_language", columnList = "language")
-})
+@Table(name = "scripts")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-@SuperBuilder
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@ToString(callSuper = true)
-@RequiredArgsConstructor
-public class Script extends BaseEntity<Long> {
+@ToString
+public class Script {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "script_seq")
@@ -46,29 +45,24 @@ public class Script extends BaseEntity<Long> {
     @Column(name = "content", nullable = false, columnDefinition = "TEXT")
     private String content;
 
-    @Version
-    @Column(name = "optlock", columnDefinition = "integer DEFAULT 0", nullable = false)
-    private long version;
 
     @Column(name = "is_enabled", nullable = false)
     private Boolean isEnabled = true;
 
-
+    @ElementCollection
+    private Map<String, String> logs = new HashMap<>();
 
     @Override
-    public final boolean equals(Object o) {
+    public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null) return false;
-        Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
-        Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
-        if (thisEffectiveClass != oEffectiveClass) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Script script = (Script) o;
-        return getId() != null && Objects.equals(getId(), script.getId());
+        return Objects.equals(id, script.id);
     }
 
     @Override
-    public final int hashCode() {
-        return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
     /**

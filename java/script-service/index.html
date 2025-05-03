@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreatorHub - OnlyFans Workspace Community Forum</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .reputation-badge {
+            transition: all 0.3s ease;
+        }
+        .reputation-badge:hover {
+            transform: scale(1.05);
+        }
+        .forum-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .tag {
+            transition: all 0.2s ease;
+        }
+        .tag:hover {
+            background-color: #F472B6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+<!-- Header -->
+<header class="bg-gradient-to-r from-blue-600 to-purple-700 shadow-lg">
+    <div class="container mx-auto p-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-users-cog text-white text-3xl mr-2"></i>
+                <h1 class="text-2xl font-bold text-white">CreatorHub</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-white hover:text-blue-200 transition">Dashboard</a>
+                <a href="#" class="text-white hover:text-blue-200 transition">Forum</a>
+                <a href="#" class="text-white hover:text-blue-200 transition">Resources</a>
+                <a href="#" class="text-white hover:text-blue-200 transition">Marketplace</a>
+                <a href="#" class="text-white hover:text-blue-200 transition">Mentorship</a>
+                <a href="#" class="text-white hover:text-blue-200 transition">Growth Tools</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button class="text-white hover:text-blue-200 transition">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">3</span>
+                    </button>
+                </div>
+                <div class="relative">
+                    <button class="text-white hover:text-blue-200 transition">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">5</span>
+                    </button>
+                </div>
+                <div class="flex items-center">
+                    <img src="/api/placeholder/64/64" alt="Profile" class="w-8 h-8 rounded-full border-2 border-white">
+                    <span class="text-white ml-2 hidden md:block">Sophia</span>
+                    <i class="fas fa-chevron-down text-white ml-1 text-xs"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Forum Header -->
+<div class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">Creator Community Forum</h1>
+                <p class="text-gray-600 mt-1">Connect, collaborate, and grow with fellow content creators</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition flex items-center">
+                    <i class="fas fa-plus mr-2"></i>
+                    Create New Post
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main class="container mx-auto px-4 my-8">
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Left Sidebar - Reputation Profile -->
+        <div class="w-full lg:w-1/4">
+            <!-- Profile Card -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-700 p-4">
+                    <div class="flex justify-between items-start">
+                        <img src="/api/placeholder/80/80" alt="Profile" class="w-16 h-16 rounded-full border-4 border-white">
+                        <div class="bg-yellow-400 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                            <i class="fas fa-crown mr-1"></i>
+                            <span>Expert</span>
+                        </div>
+                    </div>
+                    <h2 class="text-xl font-bold text-white mt-2">Sophia</h2>
+                    <p class="text-blue-100">Content Creator • 2+ Years</p>
+                </div>
+
+                <div class="p-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">87</div>
+                            <div class="text-xs text-gray-600">Reputation</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">43</div>
+                            <div class="text-xs text-gray-600">Threads</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-purple-600">156</div>
+                            <div class="text-xs text-gray-600">Replies</div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-4">
+                        <h3 class="font-medium text-gray-800 mb-2">Reputation Badges</h3>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="reputation-badge bg-purple-100 p-2 rounded text-center">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                <div class="text-xs font-medium text-purple-800 mt-1">Top Contributor</div>
+                            </div>
+                            <div class="reputation-badge bg-blue-100 p-2 rounded text-center">
+                                <i class="fas fa-certificate text-blue-500"></i>
+                                <div class="text-xs font-medium text-blue-800 mt-1">Verified Pro</div>
+                            </div>
+                            <div class="reputation-badge bg-green-100 p-2 rounded text-center">
+                                <i class="fas fa-hands-helping text-green-500"></i>
+                                <div class="text-xs font-medium text-green-800 mt-1">Mentor</div>
+                            </div>
+                            <div class="reputation-badge bg-pink-100 p-2 rounded text-center">
+                                <i class="fas fa-heart text-pink-500"></i>
+                                <div class="text-xs font-medium text-pink-800 mt-1">Supporter</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 border-t pt-4">
+                        <h3 class="font-medium text-gray-800 mb-2">Achievement Progress</h3>
+                        <div class="mb-3">
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>Content Strategy Master</span>
+                                <span>78%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 rounded-full h-2" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="flex justify-between text-xs mb-1">
+                                <span>Community Leader</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 rounded-full h-2" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <h3 class="font-bold text-gray-800 mb-3">Categories</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center justify-between text-purple-600 hover:text-purple-800 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-bullhorn mr-2"></i>
+                                <span>Marketing & Promotion</span>
+                            </div>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full">24</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-between text-gray-700 hover:text-purple-800 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-camera mr-2"></i>
+                                <span>Content Creation</span>
+                            </div>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">18</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-between text-gray-700 hover:text-purple-800 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-users mr-2"></i>
+                                <span>Subscriber Growth</span>
+                            </div>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">32</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-between text-gray-700 hover:text-purple-800 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-dollar-sign mr-2"></i>
+                                <span>Monetization</span>
+                            </div>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">47</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-between text-gray-700 hover:text-purple-800 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-balance-scale mr-2"></i>
+                                <span>Legal & Compliance</span>
+                            </div>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">12</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center justify-between text-gray-700 hover:text-purple-800 transition">
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                <span>Safety & Security</span>
+                            </div>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded-full">29</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Top Contributors -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-bold text-gray-800 mb-3">Top Contributors</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-8 h-8 rounded-full mr-2">
+                        <div class="flex-1">
+                            <div class="flex items-center">
+                                <a href="#" class="font-medium text-gray-800 hover:text-purple-600">LuciaStars</a>
+                                <div class="ml-2 bg-yellow-400 text-xs text-white px-1 rounded">Elite</div>
+                            </div>
+                            <div class="text-xs text-gray-500">Reputation: 128</div>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-8 h-8 rounded-full mr-2">
+                        <div class="flex-1">
+                            <div class="flex items-center">
+                                <a href="#" class="font-medium text-gray-800 hover:text-purple-600">JakeCreates</a>
+                                <div class="ml-2 bg-blue-400 text-xs text-white px-1 rounded">Expert</div>
+                            </div>
+                            <div class="text-xs text-gray-500">Reputation: 112</div>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-8 h-8 rounded-full mr-2">
+                        <div class="flex-1">
+                            <div class="flex items-center">
+                                <a href="#" class="font-medium text-gray-800 hover:text-purple-600">MiaSunshine</a>
+                                <div class="ml-2 bg-green-400 text-xs text-white px-1 rounded">Mentor</div>
+                            </div>
+                            <div class="text-xs text-gray-500">Reputation: 98</div>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-8 h-8 rounded-full mr-2">
+                        <div class="flex-1">
+                            <div class="flex items-center">
+                                <a href="#" class="font-medium text-gray-800 hover:text-purple-600">Sophia</a>
+                                <div class="ml-2 bg-blue-400 text-xs text-white px-1 rounded">Expert</div>
+                            </div>
+                            <div class="text-xs text-gray-500">Reputation: 87</div>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-8 h-8 rounded-full mr-2">
+                        <div class="flex-1">
+                            <div class="flex items-center">
+                                <a href="#" class="font-medium text-gray-800 hover:text-purple-600">AlexModel</a>
+                                <div class="ml-2 bg-purple-400 text-xs text-white px-1 rounded">Rising</div>
+                            </div>
+                            <div class="text-xs text-gray-500">Reputation: 76</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Forum Content -->
+        <div class="w-full lg:w-2/4">
+            <!-- Forum Search & Filters -->
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <div class="flex">
+                    <div class="flex-1 relative">
+                        <input type="text" placeholder="Search forums..." class="w-full py-2 pl-10 pr-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <div class="absolute left-3 top-2.5 text-gray-400">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 ml-2 px-4 rounded-lg flex items-center">
+                        <i class="fas fa-filter mr-2"></i>
+                        <span>Filters</span>
+                    </button>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="tag bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full cursor-pointer">Trending</span>
+                    <span class="tag bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full cursor-pointer">Recent</span>
+                    <span class="tag bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full cursor-pointer">Popular</span>
+                    <span class="tag bg-purple-200 text-purple-700 text-xs px-3 py-1 rounded-full cursor-pointer">Marketing</span>
+                    <span class="tag bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full cursor-pointer">Growth</span>
+                    <span class="tag bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full cursor-pointer">Content Strategy</span>
+                </div>
+            </div>
+
+            <!-- Featured Thread -->
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg shadow-md p-4 mb-6 border-l-4 border-purple-500">
+                <div class="flex justify-between">
+                    <div class="flex items-start">
+                        <div class="bg-yellow-400 text-white p-1 rounded mr-3">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-800">Featured Thread: May Growth Challenge - Share Your Strategies</h3>
+                            <p class="text-gray-600 text-sm mt-1">Join our monthly growth challenge and share your strategies for increasing subscribers. The top 3 performers will win premium marketing templates and a spotlight feature.</p>
+                        </div>
+                    </div>
+                    <div class="text-purple-600 font-medium text-sm">
+                        57 participants
+                    </div>
+                </div>
+                <div class="flex justify-between mt-3">
+                    <div class="flex flex-wrap gap-1">
+                        <span class="bg-purple-200 text-purple-700 text-xs px-2 py-0.5 rounded">Challenge</span>
+                        <span class="bg-blue-200 text-blue-700 text-xs px-2 py-0.5 rounded">Growth</span>
+                        <span class="bg-green-200 text-green-700 text-xs px-2 py-0.5 rounded">Collaboration</span>
+                    </div>
+                    <button class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                        Join Challenge →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Forum Threads -->
+            <div class="space-y-4">
+                <!-- Thread 1 -->
+                <div class="bg-white rounded-lg shadow-md p-4 forum-card transition">
+                    <div class="flex">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <a href="#" class="font-medium text-gray-800 hover:text-purple-600">MiaSunshine</a>
+                                    <div class="ml-2 bg-green-400 text-xs text-white px-1 rounded">Mentor</div>
+                                </div>
+                                <span class="text-xs text-gray-500">2 hours ago</span>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mt-1">Best practices for engagement-driven messaging?</h3>
+                            <p class="text-gray-600 text-sm mt-1">
+                                I've been trying out different messaging strategies to boost engagement rates with subscribers. Has anyone found a good balance between personal messages and promotional content?
+                            </p>
+                            <div class="flex flex-wrap gap-1 mt-2">
+                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-0.5 rounded">Marketing</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded">Engagement</span>
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded">Messaging</span>
+                            </div>
+                            <div class="flex justify-between mt-3">
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <button class="flex items-center hover:text-purple-600">
+                                        <i class="far fa-comment mr-1"></i>
+                                        <span>24 replies</span>
+                                    </button>
+                                    <button class="flex items-center ml-4 hover:text-purple-600">
+                                        <i class="far fa-eye mr-1"></i>
+                                        <span>204 views</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <button class="flex items-center text-gray-500 hover:text-purple-600">
+                                        <i class="far fa-bookmark"></i>
+                                    </button>
+                                    <button class="flex items-center text-gray-500 hover:text-purple-600 ml-3">
+                                        <i class="far fa-heart mr-1"></i>
+                                        <span>32</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thread 2 -->
+                <div class="bg-white rounded-lg shadow-md p-4 forum-card transition">
+                    <div class="flex">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <a href="#" class="font-medium text-gray-800 hover:text-purple-600">JakeCreates</a>
+                                    <div class="ml-2 bg-blue-400 text-xs text-white px-1 rounded">Expert</div>
+                                </div>
+                                <span class="text-xs text-gray-500">Yesterday</span>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mt-1">New payout schedule changes - Discussion</h3>
+                            <p class="text-gray-600 text-sm mt-1">
+                                With the recent changes to the payout schedule, I wanted to discuss strategies for managing cash flow and planning content investments. What are you all doing differently?
+                            </p>
+                            <div class="flex flex-wrap gap-1 mt-2">
+                                <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-0.5 rounded">Finance</span>
+                                <span class="bg-red-100 text-red-700 text-xs px-2 py-0.5 rounded">Policy Changes</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded">Planning</span>
+                            </div>
+                            <div class="flex justify-between mt-3">
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <button class="flex items-center hover:text-purple-600">
+                                        <i class="far fa-comment mr-1"></i>
+                                        <span>47 replies</span>
+                                    </button>
+                                    <button class="flex items-center ml-4 hover:text-purple-600">
+                                        <i class="far fa-eye mr-1"></i>
+                                        <span>378 views</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <button class="flex items-center text-gray-500 hover:text-purple-600">
+                                        <i class="far fa-bookmark"></i>
+                                    </button>
+                                    <button class="flex items-center text-gray-500 hover:text-purple-600 ml-3">
+                                        <i class="far fa-heart mr-1"></i>
+                                        <span>52</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thread 3 -->
+                <div class="bg-white rounded-lg shadow-md p-4 forum-card transition">
+                    <div class="flex">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <a href="#" class="font-medium text-gray-800 hover:text-purple-600">Sophia</a>
+                                    <div class="ml-2 bg-blue-400 text-xs text-white px-1 rounded">Expert</div>
+                                </div>
+                                <span class="text-xs text-gray-500">2 days ago</span>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mt-1">Content calendar template I developed (Sharing)</h3>
+                            <p class="text-gray-600 text-sm mt-1">
+                                I created a content scheduling template that's helped me triple my consistency and increase engagement by 28%. I'm sharing it with the community - download and let me know what you think!
+                            </p>
+                            <div class="flex flex-wrap gap-1 mt-2">
+                                <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-0.5 rounded">Resource</span>
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded">Planning</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded">Productivity</span>
+                            </div>
+                            <div class="mt-3 bg-blue-50 p-2 rounded-lg border border-blue-100 flex items-center">
+                                <i class="fas fa-file-excel text-blue-500 text-xl mr-2"></i>
+                                <div class="flex-1">
+                                    <div class="text-sm font-medium">Content_Calendar_Template_2025.xlsx</div>
+                                    <div class="text-xs text-gray-500">Excel file • 245 KB • 183 downloads</div>
+                                </div>
+                                <button class="bg-blue-500 hover:bg-blue-600 text-white text-xs py-1 px-3 rounded transition">
+                                    Download
+                                </button>
+                            </div>
+                            <div class="flex justify-between mt-3">
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <button class="flex items-center hover:text-purple-600">
+                                        <i class="far fa-comment mr-1"></i>
+                                        <span>36 replies</span>
+                                    </button>
+                                    <button class="flex items-center ml-4 hover:text-purple-600">
+                                        <i class="far fa-eye mr-1"></i>
+                                        <span>256 views</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <button class="flex items-center text-gray-500 hover:text-purple-600">
+                                        <i class="far fa-bookmark"></i>
+                                    </button>
+                                    <button class="flex items-center text-purple-600 hover:text-purple-800 ml-3">
+                                        <i class="fas fa-heart mr-1"></i>
+                                        <span>94</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thread 4 -->
+                <div class="bg-white rounded-lg shadow-md p-4 forum-card transition">
+                    <div class="flex">
+                        <img src="/api/placeholder/40/40" alt="User" class="w-10 h-10 rounded-full mr-3">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <a href="#" class="font-medium text-gray-800 hover:text-purple-600">AlexModel</a>
+                                    <div class="ml-2 bg-purple-400 text-xs text-white px-1 rounded">Rising</div>
+                                </div>
+                                <span class="text-xs text-gray-500">3 days ago</span>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mt-1">Camera setup recommendations for beginners?</h3>
+                            <p class="text-gray-600 text-sm mt-1">
+                                I'm looking to upgrade my content quality but don't have a huge budget yet. What camera/lighting setups would you recommend for someone just starting to invest in better equipment?
+                            </p>
+                            <div class="flex flex-wrap gap-1 mt-2">
+                                <span class="bg-red-100 text-red-700 text-xs px-2 py-0.5 rounded">Equipment</span>
+                                <span class="bg-orange-100 text-orange-700 text-xs px-2 py-0.5 rounded">Beginner</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded">Quality</span>
+                            </div>
+                            <div class="flex justify-between mt-3">
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <button class="flex items-center hover:text-purple-600">
+                                        <i class="far fa-comment mr-1"></i>
+                                        <span>42 replies</span>
+                                    </button>
+                                    <button class="flex items-center ml-4 hover:text-purple-600">
+                                        <i class="far fa-eye mr-1"></i>
+                                        <span>319 views</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <button class="flex items-center text-gray-500 hover:text-purple-600">
+                                        <i class="far fa-bookmark"></i>
+                                    </button>
+                                    <button class="flex items-center text-gray-500 hover:text-purple-600 ml-3">
+                                        <i class="far fa-heart mr-1"></i>
+                                        <span>56</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-6">
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg transition">
+                        Load More Threads
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="w-full lg:w-1/4">
+            <!-- Reputation System Overview -->
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <h3 class="font-bold text-gray-800 mb-3">Reputation System</h3>
+                <div class="mb-4">
+                    <div class="flex items-center mb-1">
+                        <div class="w-3 h-3 rounded-full bg-yellow-400 mr-2"></div>
+                        <div class="text-sm font-medium">Elite Creator (120+ Rep)</div>
+                    </div>
+                    <div class="flex items-center mb-1">
+                        <div class="w-3 h-3 rounded-full bg-blue-400 mr-2"></div>
+                        <div class="text-sm font-medium">Expert (80-119 Rep)</div>
+                    </div>
+                    <div class="flex items-center mb-1">
+                        <div class="w-3 h-3 rounded-full bg-green-400 mr-2"></div>
+                        <div class="text-sm font-medium">Mentor (60-79 Rep)</div>
+                    </div>
+                    <div class="flex items-center mb-1">
+                        <div class="w-3 h-3 rounded-full bg-purple-400 mr-2"></div>
+                        <div class="text-sm font-medium">Rising Star (30-59 Rep)</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-gray-400 mr-2"></div>
+                        <div class="text-sm font-medium">Creator (0-29 Rep)</div>
+                    </div>
+                </div>
+
+                <div class="border-t pt-3">
+                    <h4 class="font-medium text-gray-800 mb-2">How to Earn Reputation</h4>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li class="flex items-start">
+                            <i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Helpful posts & replies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Sharing resources & templates</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Participating in challenges</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Verified success stories</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus-circle text-green-500 mt-1 mr-2"></i>
+                            <span>Mentoring new creators</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <a href="#" class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                        Full Reputation Guide →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trending Topics -->
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <h3 class="font-bold text-gray-800 mb-3">Trending Topics</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="#" class="block hover:bg-purple-50 p-2 rounded-lg transition">
+                            <div class="flex items-center">
+                                <div class="text-purple-600 font-bold mr-2">#1</div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-800">Payout schedule changes</div>
+                                    <div class="text-xs text-gray-500">47 posts today</div>
+                                </div>
+                                <div class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">Hot</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:bg-purple-50 p-2 rounded-lg transition">
+                            <div class="flex items-center">
+                                <div class="text-purple-600 font-bold mr-2">#2</div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-800">May Growth Challenge</div>
+                                    <div class="text-xs text-gray-500">32 posts today</div>
+                                </div>
+                                <div class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">New</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:bg-purple-50 p-2 rounded-lg transition">
+                            <div class="flex items-center">
+                                <div class="text-purple-600 font-bold mr-2">#3</div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-800">Content scheduling tips</div>
+                                    <div class="text-xs text-gray-500">28 posts today</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:bg-purple-50 p-2 rounded-lg transition">
+                            <div class="flex items-center">
+                                <div class="text-purple-600 font-bold mr-2">#4</div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-800">Equipment recommendations</div>
+                                    <div class="text-xs text-gray-500">24 posts today</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block hover:bg-purple-50 p-2 rounded-lg transition">
+                            <div class="flex items-center">
+                                <div class="text-purple-600 font-bold mr-2">#5</div>
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-800">Subscriber retention strategies</div>
+                                    <div class="text-xs text-gray-500">19 posts today</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Community Events -->
+            <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                <h3 class="font-bold text-gray-800 mb-3">Upcoming Events</h3>
+                <div class="space-y-4">
+                    <div class="bg-purple-50 rounded-lg p-3 border border-purple-100">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-800">Creator Networking Session</h4>
+                                <p class="text-sm text-gray-600 mt-1">Connect with fellow creators and share insights in our monthly networking event.</p>
+                            </div>
+                            <div class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded-full">
+                                Virtual
+                            </div>
+                        </div>
+                        <div class="mt-2 flex justify-between">
+                            <div class="text-xs text-gray-500">
+                                <i class="far fa-calendar mr-1"></i>
+                                May 15, 2025
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                2:00 PM EDT
+                            </div>
+                        </div>
+                        <button class="w-full mt-2 bg-purple-600 hover:bg-purple-700 text-white text-xs py-1 px-3 rounded transition">
+                            RSVP Now
+                        </button>
+                    </div>
+
+                    <div class="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-800">Content Creation Workshop</h4>
+                                <p class="text-sm text-gray-600 mt-1">Learn advanced content creation techniques from industry experts.</p>
+                            </div>
+                            <div class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded-full">
+                                Webinar
+                            </div>
+                        </div>
+                        <div class="mt-2 flex justify-between">
+                            <div class="text-xs text-gray-500">
+                                <i class="far fa-calendar mr-1"></i>
+                                May 22, 2025
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                1:00 PM EDT
+                            </div>
+                        </div>
+                        <button class="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white text-xs py-1 px-3 rounded transition">
+                            Register
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-3 text-center">
+                    <a href="#" class="text-purple-600 hover:text-purple-800 text-sm font-medium">
+                        View All Events →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Community Resources -->
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h3 class="font-bold text-gray-800 mb-3">Creator Resources</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-purple-600">
+                            <i class="fas fa-file-alt text-purple-500 mr-2"></i>
+                            <span class="text-sm">Content Strategy Guide</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-purple-600">
+                            <i class="fas fa-calculator text-purple-500 mr-2"></i>
+                            <span class="text-sm">Pricing Calculator</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-purple-600">
+                            <i class="fas fa-calendar-alt text-purple-500 mr-2"></i>
+                            <span class="text-sm">Content Calendar Templates</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-purple-600">
+                            <i class="fas fa-camera text-purple-500 mr-2"></i>
+                            <span class="text-sm">Photography & Lighting Tips</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-purple-600">
+                            <i class="fas fa-chart-line text-purple-500 mr-2"></i>
+                            <span class="text-sm">Analytics Interpretation Guide</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-purple-600">
+                            <i class="fas fa-shield-alt text-purple-500 mr-2"></i>
+                            <span class="text-sm">Safety & Privacy Best Practices</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="border-t mt-4 pt-4">
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm py-2 rounded transition">
+                        Submit a Resource
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Forum Thread Modal (Hidden by Default) -->
+<div class="fixed inset-0 bg-black bg-opacity-50 hidden" id="threadModal">
+    <div class="container mx-auto h-full flex items-center justify-center px-4 py-8">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-full overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b p-4 flex justify-between items-center">
+                <h2 class="text-xl font-bold text-gray-800">Thread: Best practices for engagement-driven messaging?</h2>
+                <button class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <div class="p-6">
+                <!-- Original Post -->
+                <div class="bg-purple-50 rounded-lg p-4 mb-6">
+                    <div class="flex">
+                        <img src="/api/placeholder/48/48" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <a href="#" class="font-medium text-gray-800 hover:text-purple-600">MiaSunshine</a>
+                                    <div class="ml-2 bg-green-400 text-xs text-white px-1 rounded">Mentor</div>
+                                </div>
+                                <span class="text-xs text-gray-500">2 hours ago</span>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mt-1">Best practices for engagement-driven messaging?</h3>
+                            <p class="text-gray-600 mt-2">
+                                I've been trying out different messaging strategies to boost engagement rates with subscribers. Has anyone found a good balance between personal messages and promotional content?
+                            </p>
+                            <p class="text-gray-600 mt-2">
+                                So far, I've noticed that personal check-ins get more responses, but promotional messages about new content drive more immediate sales. I'm curious if anyone has found an optimal schedule or approach that balances both effectively.
+                            </p>
+                            <p class="text-gray-600 mt-2">
+                                Also, has anyone experimented with segmenting subscribers based on their engagement levels? Any tools or techniques you'd recommend?
+                            </p>
+                            <div class="flex flex-wrap gap-1 mt-3">
+                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-0.5 rounded">Marketing</span>
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded">Engagement</span>
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded">Messaging</span>
+                            </div>
+                            <div class="flex items-center mt-4 text-gray-500 text-sm">
+                                <button class="flex items-center hover:text-purple-600">
+                                    <i class="far fa-heart mr-1"></i>
+                                    <span>32</span>
+                                </button>
+                                <button class="flex items-center ml-4 hover:text-purple-600">
+                                    <i class="far fa-bookmark mr-1"></i>
+                                    <span>Save</span>
+                                </button>
+                                <button class="flex items-center ml-4 hover:text-purple-600">
+                                    <i class="fas fa-share-alt mr-1"></i>
+                                    <span>Share</span>
+                                </button>
+                                <button class="flex items-center ml-4 hover:text-purple-600">
+                                    <i class="far fa-flag mr-1"></i>
+                                    <span>Report</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thread Replies -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-gray-800 mb-3">24 Replies</h3>
+
+                    <!-- Reply 1 -->
+                    <div class="border-b pb-4 mb-4">
+                        <div class="flex">
+                            <img src="/api/placeholder/40/40" alt="User" class="w-10 h-10 rounded-full mr-3">
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <a href="#" class="font-medium text-gray-800 hover:text-purple-600">JakeCreates</a>
+                                        <div class="ml-2 bg-blue-400 text-xs text-white px-1 rounded">Expert</div>
+                                    </div>
+                                    <span class="text-xs text-gray-500">2 hours ago</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    I've had success with a 70/30 approach - 70% personal engagement and 30% promotional. The key is making even your promotional messages feel personalized and valuable rather than just "buy this."
+                                </p>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    For segmentation, I use the built-in tools to create groups based on subscription length and purchase history. Long-term subscribers get more exclusive/early access messages, while newer ones get more "getting to know you" content.
+                                </p>
+                                <div class="flex items-center mt-3 text-gray-500 text-xs">
+                                    <button class="flex items-center hover:text-purple-600">
+                                        <i class="far fa-heart mr-1"></i>
+                                        <span>18</span>
+                                    </button>
+                                    <button class="flex items-center ml-3 hover:text-purple-600">
+                                        <i class="far fa-comment mr-1"></i>
+                                        <span>Reply</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reply 2 -->
+                    <div class="border-b pb-4 mb-4">
+                        <div class="flex">
+                            <img src="/api/placeholder/40/40" alt="User" class="w-10 h-10 rounded-full mr-3">
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <a href="#" class="font-medium text-gray-800 hover:text-purple-600">LuciaStars</a>
+                                        <div class="ml-2 bg-yellow-400 text-xs text-white px-1 rounded">Elite</div>
+                                    </div>
+                                    <span class="text-xs text-gray-500">1 hour ago</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    I schedule my messages strategically throughout the week. Monday/Thursday for personal check-ins, Wednesday for a content preview, and weekend for main promotional messages.
+                                </p>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    Also, try using polls and questions in your messages - they dramatically increase engagement rates and give you valuable feedback about what your subscribers want to see.
+                                </p>
+                                <div class="flex items-center mt-3 text-gray-500 text-xs">
+                                    <button class="flex items-center hover:text-purple-600">
+                                        <i class="far fa-heart mr-1"></i>
+                                        <span>24</span>
+                                    </button>
+                                    <button class="flex items-center ml-3 hover:text-purple-600">
+                                        <i class="far fa-comment mr-1"></i>
+                                        <span>Reply</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reply 3 -->
+                    <div class="border-b pb-4 mb-4">
+                        <div class="flex">
+                            <img src="/api/placeholder/40/40" alt="User" class="w-10 h-10 rounded-full mr-3">
+                            <div class="flex-1">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <a href="#" class="font-medium text-gray-800 hover:text-purple-600">Sophia</a>
+                                        <div class="ml-2 bg-blue-400 text-xs text-white px-1 rounded">Expert</div>
+                                    </div>
+                                    <span class="text-xs text-gray-500">45 minutes ago</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    I've been testing a tiered approach based on subscriber activity. For my most engaged subscribers, I focus on exclusivity and behind-the-scenes content. For less active ones, I use more direct check-ins and special offers to re-engage them.
+                                </p>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    One thing that's worked well is sending voice messages occasionally instead of text. They feel much more personal and get great response rates.
+                                </p>
+                                <div class="mt-3 bg-purple-50 p-3 rounded-lg border border-purple-100">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-chart-line text-purple-500 mr-2"></i>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Engagement Template.pdf</div>
+                                            <div class="text-xs text-gray-500">PDF • 1.2 MB • 37 downloads</div>
+                                        </div>
+                                        <button class="bg-purple-500 hover:bg-purple-600 text-white text-xs py-1 px-3 rounded transition">
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mt-3 text-gray-500 text-xs">
+                                    <button class="flex items-center hover:text-purple-600">
+                                        <i class="far fa-heart mr-1"></i>
+                                        <span>15</span>
+                                    </button>
+                                    <button class="flex items-center ml-3 hover:text-purple-600">
+                                        <i class="far fa-comment mr-1"></i>
+                                        <span>Reply</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More Replies Button -->
+                    <div class="text-center">
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition">
+                            Load More Replies
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reply Input -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="font-bold text-gray-800 mb-3">Add Your Reply</h3>
+                    <textarea class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" rows="4" placeholder="Share your thoughts or experience..."></textarea>
+                    <div class="flex justify-between items-center mt-3">
+                        <div class="flex space-x-2">
+                            <button class="text-gray-500 hover:text-gray-700 p-1">
+                                <i class="fas fa-image"></i>
+                            </button>
+                            <button class="text-gray-500 hover:text-gray-700 p-1">
+                                <i class="fas fa-link"></i>
+                            </button>
+                            <button class="text-gray-500 hover:text-gray-700 p-1">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                            <button class="text-gray-500 hover:text-gray-700 p-1">
+                                <i class="fas fa-code"></i>
+                            </button>
+                        </div>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                            Post Reply
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between">
+            <div class="mb-6 md:mb-0">
+                <div class="flex items-center">
+                    <i class="fas fa-users-cog text-blue-400 text-3xl mr-2"></i>
+                    <h2 class="text-xl font-bold">CreatorHub</h2>
+                </div>
+                <p class="mt-2 text-gray-400 max-w-md">
+                    The professional workspace for content creators to connect, collaborate, and elevate their OnlyFans careers through community support.
+                </p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-discord text-lg"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-telegram text-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-400">Platform</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Dashboard</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Forum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Marketplace</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Growth Tools</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-400">Community</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Challenges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mentorship</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Reputation System</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-400">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Community Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm">© 2025 CreatorHub. All rights reserved.</p>
+            <div class="mt-4 md:mt-0 flex items-center">
+                <div class="flex items-center mr-6">
+                    <i class="fas fa-shield-alt text-blue-400 mr-2"></i>
+                    <span class="text-gray-400 text-sm">Secure Platform</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-user-shield text-blue-400 mr-2"></i>
+                    <span class="text-gray-400 text-sm">Privacy Protected</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
