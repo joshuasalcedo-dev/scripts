@@ -1,3 +1,4 @@
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
 ## How to Export as EXE and JAR
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
